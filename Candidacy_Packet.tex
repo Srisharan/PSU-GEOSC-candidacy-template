@@ -1,0 +1,79 @@
+%% Candidacy_Packet.tex
+%% Copyright 2014 J.R. Leeman
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License, either version 1.3
+% of this license or (at your option) any later version.
+% The latest version of this license is in
+%   http://www.latex-project.org/lppl.txt
+% and version 1.3 or later is part of all distributions of LaTeX
+% version 2005/12/01 or later.
+%
+% This work has the LPPL maintenance status `maintained'.
+% 
+% The Current Maintainer of this work is J.R. Leeman (www.johnrleeman.com).
+%
+% This work consists of the files Candidacy_Packet.tex, prop1.tex, prop2.tex, background.tex,
+% title.tex
+
+\documentclass[a4paper,11pt,oneside]{report}
+\usepackage{natbib}
+\usepackage{chapterbib}
+
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{indentfirst}
+\usepackage[table]{xcolor}
+\usepackage{setspace}
+\usepackage[margin=1.0in]{geometry}
+\usepackage{appendix}
+\usepackage{pdfpages}
+
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,        % false: boxed links; true: colored links
+    linkcolor=blue,         % color of internal links
+    citecolor=blue,       % color of links to bibliography
+    filecolor=magenta,   % color of file links
+    urlcolor=blue           % color of external links
+}
+
+
+% Make lists without bullets
+\renewenvironment{itemize}{
+  \begin{list}{}{
+    \setlength{\leftmargin}{1.5em}
+  }
+}{
+  \end{list}
+}
+
+\usepackage[Bjornstrup]{fncychap}
+
+\usepackage{titlesec}
+\titleformat{\section}{\large\bfseries}{\thesection}{1em}{}
+\titlespacing\section{0pt}{0pt plus 5pt minus 2pt}{0pt plus 2pt minus 2pt}
+\titlespacing\subsection{0pt}{0pt plus 5pt minus 2pt}{0pt plus 2pt minus 2pt}
+\titlespacing\subsubsection{0pt}{0pt plus 5pt minus 2pt}{0pt plus 2pt minus 2pt}
+
+\begin{document}
+
+\include{title/title}
+\setcounter{chapter}{-1}
+\renewcommand{\chaptername}{}
+\doublespacing
+
+\tableofcontents
+
+\include{frontmatter/background}
+\doublespacing
+
+\newpage
+\include{prop1/prop1}
+
+\newpage
+\include{prop2/prop2}
+
+
+\end{document}
